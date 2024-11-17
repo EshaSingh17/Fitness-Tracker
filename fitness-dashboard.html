@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Dashboard - MAGICAL MANTRAS</title>
+    <!-- Existing CSS files -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Chart.js for visualizations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <!-- Navbar (copy from other pages) -->
+    <div class="navbar navbar-expand-lg fixed-top">
+        <!-- Your existing navbar code -->
+    </div>
+
+    <div class="dashboard-container" style="margin-top: 120px; padding: 20px;">
+        <div class="container">
+            <!-- Welcome Section -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2>Welcome to Your Fitness Journey</h2>
+                    <p>Track your progress and achieve your wellness goals</p>
+                </div>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h3>Classes Attended</h3>
+                        <p class="stat-number">0</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h3>Minutes Practiced</h3>
+                        <p class="stat-number">0</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h3>Calories Burned</h3>
+                        <p class="stat-number">0</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h3>Current Streak</h3>
+                        <p class="stat-number">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Charts -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <h3>Weekly Activity</h3>
+                        <canvas id="weeklyActivityChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <h3>Class Distribution</h3>
+                        <canvas id="classDistributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Classes -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h3>Upcoming Classes</h3>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Instructor</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="upcomingClassesTable">
+                                <!-- Will be populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Goal Tracking -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="goals-container">
+                        <h3>Your Goals</h3>
+                        <div class="goal-progress">
+                            <label>Weekly Classes Goal</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="add-workout-container">
+                        <h3>Log Your Practice</h3>
+                        <form id="logWorkoutForm">
+                            <div class="form-group">
+                                <label>Practice Type</label>
+                                <select class="form-control" required>
+                                    <option value="">Select type</option>
+                                    <option value="yoga">Yoga</option>
+                                    <option value="meditation">Meditation</option>
+                                    <option value="cardio">Cardio</option>
+                                    <option value="aerobics">Aerobics</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Duration (minutes)</label>
+                                <input type="number" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn custom-btn bg-color mt-3">Log Practice</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add the necessary scripts -->
+    <script src="dashboard.js"></script>
+</body>
+</html>
